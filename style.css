@@ -63,6 +63,7 @@ img{display:block;max-width:100%}
 .statement .side{grid-column:1/4;padding-top:12px}
 .statement .lead{grid-column:4/13;font-size:clamp(26px,3.5vw,54px);line-height:1.08;letter-spacing:-.028em;font-weight:400}
 .statement .lead em{font-style:normal;color:var(--mute)}
+.statement .lead i{font-style:italic}
 .statement .links{grid-column:4/13;margin-top:44px;display:flex;gap:32px;flex-wrap:wrap;font-size:15px}
 @media (max-width:900px){.statement .side,.statement .lead,.statement .links{grid-column:1/-1}.statement .side{margin-bottom:28px;padding:0}}
 
