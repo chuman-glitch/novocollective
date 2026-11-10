@@ -237,19 +237,13 @@
         <div class="people">
           <div class="person">
             <p class="name">Chuman Zhang</p>
-            <p class="mono mute">Co-Founder · Curatorial &amp; Partnerships</p>
-            <p>Leads curatorial direction and institutional partnerships across Nōvo's projects.</p>
-            <ul class="creds mono">
-              <!-- Add credentials here, one per line, e.g. <li>MA Curating, School Name</li> -->
-            </ul>
+            <p class="mono mute">Co-Founder · Production &amp; Sites</p>
+            <p>Runs production on the ground: finding sites, working with property owners and venues, and keeping the relationships that bring projects back.</p>
           </div>
           <div class="person">
             <p class="name">Jerry Guo</p>
-            <p class="mono mute">Co-Founder · Creative Director</p>
-            <p>Leads creative direction and production across every edition.</p>
-            <ul class="creds mono">
-              <!-- Add credentials here, one per line -->
-            </ul>
+            <p class="mono mute">Co-Founder · Partnerships</p>
+            <p>Leads partnerships and business development, from the first conversation to a signed agreement.</p>
           </div>
         </div>
       </details>
@@ -276,6 +270,7 @@
             <li>Caribbean Culture Fund</li>
             <li>Cultuurfonds Caribisch Gebied</li>
             <li>Fractured Atlas</li>
+            <li>Materials for the Arts</li>
           </ul>
         </div>
         <div>
@@ -297,7 +292,6 @@
             <li>AMACO</li>
             <li>Artist &amp; Craftsman Supply</li>
             <li>EcoPoxy</li>
-            <li>Materials for the Arts</li>
             <li>Condesa Gin</li>
           </ul>
         </div>
@@ -384,6 +378,26 @@
     });
     v.addEventListener('ended', function () { f.classList.remove('playing'); v.controls = false; v.load(); });
   });
+  // header: transparent over the hero, then a solid bar that matches the section beneath it;
+  // hides while scrolling down, returns when scrolling up
+  (function () {
+    var top = document.querySelector('.top'), hero = document.querySelector('.hero');
+    var darks = document.querySelectorAll('.hero, .film, .bleed, .work, .contact');
+    var lastY = window.scrollY, ticking = false;
+    function update() {
+      ticking = false;
+      var y = window.scrollY, h = top.offsetHeight, mid = h / 2;
+      var past = hero.getBoundingClientRect().bottom <= h;
+      var dark = false;
+      darks.forEach(function (d) { var r = d.getBoundingClientRect(); if (r.top <= mid && r.bottom > mid) dark = true; });
+      top.classList.toggle('solid', past);
+      top.classList.toggle('dark', dark);
+      if (Math.abs(y - lastY) > 6) { top.classList.toggle('away', past && y > lastY); lastY = y; }
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    top.addEventListener('focusin', function () { top.classList.remove('away'); });
+    update();
+  })();
 </script>
 </body>
 </html>
