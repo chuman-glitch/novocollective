@@ -42,20 +42,24 @@ img{display:block;max-width:100%}
 .top .lang:hover{opacity:1}
 @media (max-width:760px){.top nav a:not(.cta):not(.lang){display:none}.top nav{align-items:center;gap:18px}.top .logo img{height:15px}}
 
-/* Chinese page. Display lines are set in a Song (serif) face, running text in a sans;
-   Latin words keep the grotesk. Chinese reads larger than Latin at the same size,
-   so display sizes step down and line height opens up. */
+/* Chinese page. Same idea as the English: one sans family, no bold.
+   PingFang SC on Apple devices, Noto Sans SC elsewhere; Latin words keep the grotesk.
+   Hierarchy comes from size, weight 300/400 and grey, never from heavy strokes.
+   Chinese reads larger than Latin at the same size, so display sizes step down
+   and line height opens up. */
 html:lang(zh){
   --sans:'Schibsted Grotesk','PingFang SC','Noto Sans SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
   --mono:'IBM Plex Mono','PingFang SC','Noto Sans SC','Microsoft YaHei',ui-monospace,monospace;
-  --song:'Schibsted Grotesk','Noto Serif SC','Songti SC','STSong',serif;
 }
-html:lang(zh) .statement .lead{font-family:var(--song);font-size:clamp(21px,2.55vw,38px);line-height:1.62;letter-spacing:.01em}
-html:lang(zh) .w-head h2{font-family:var(--song);font-size:clamp(22px,2.7vw,40px);line-height:1.55;letter-spacing:.01em}
-html:lang(zh) .f-lede{font-family:var(--song);font-size:clamp(16px,1.35vw,19px);line-height:1.85;letter-spacing:.02em}
-html:lang(zh) .contact h2{font-family:var(--song);font-weight:500;font-size:clamp(40px,6.2vw,104px);line-height:1.2;letter-spacing:.04em}
+html:lang(zh) body{font-weight:400}
+html:lang(zh) .statement .lead{font-weight:300;font-size:clamp(21px,2.5vw,37px);line-height:1.62;letter-spacing:.02em}
+html:lang(zh) .w-head h2{font-weight:300;font-size:clamp(22px,2.6vw,39px);line-height:1.58;letter-spacing:.02em}
+html:lang(zh) .contact h2{font-weight:300;font-size:clamp(40px,6vw,100px);line-height:1.22;letter-spacing:.06em}
+html:lang(zh) .f-lede{font-weight:300;font-size:clamp(16px,1.35vw,19px);line-height:1.85;letter-spacing:.03em}
 html:lang(zh) .p-body aside p,html:lang(zh) .offer p,html:lang(zh) .person p,html:lang(zh) .network p{font-size:14.5px;letter-spacing:.03em;line-height:1.85}
-html:lang(zh) .offer h3{letter-spacing:.04em}
+html:lang(zh) .offer h3,html:lang(zh) .ed b,html:lang(zh) .person .name{font-weight:400;letter-spacing:.04em}
+html:lang(zh) .offer h3{font-size:21px}
+html:lang(zh) .ed b{font-size:15.5px}
 html:lang(zh) .mono{font-size:12px;letter-spacing:.06em}
 html:lang(zh) .panel-txt .mono{line-height:1.8}
 
