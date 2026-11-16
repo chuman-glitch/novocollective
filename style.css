@@ -38,7 +38,20 @@ img{display:block;max-width:100%}
 .top nav a{opacity:.85}
 .top nav a:hover{opacity:1}
 .top .cta{border:1px solid currentColor;padding:6px 12px}
-@media (max-width:760px){.top nav a:not(.cta){display:none}.top .logo img{height:15px}}
+.top .lang{opacity:.6}
+.top .lang:hover{opacity:1}
+@media (max-width:760px){.top nav a:not(.cta):not(.lang){display:none}.top nav{align-items:center;gap:18px}.top .logo img{height:15px}}
+
+/* Chinese page: CJK fonts, no negative tracking on running Chinese text, a little more line height */
+html:lang(zh){
+  --sans:'Schibsted Grotesk','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',system-ui,sans-serif;
+  --mono:'IBM Plex Mono','PingFang SC','Noto Sans SC','Microsoft YaHei',ui-monospace,monospace;
+}
+html:lang(zh) .statement .lead{letter-spacing:0;line-height:1.32}
+html:lang(zh) .w-head h2{letter-spacing:0;line-height:1.3}
+html:lang(zh) .contact h2{letter-spacing:0;line-height:1.05}
+html:lang(zh) .f-lede,html:lang(zh) .p-body aside p,html:lang(zh) .offer p,html:lang(zh) .person p{letter-spacing:.02em;line-height:1.75}
+html:lang(zh) .mono{letter-spacing:.03em}
 
 /* hero diptych */
 .hero{display:grid;grid-template-columns:1fr 1fr;height:100svh;min-height:560px;background:#000}
