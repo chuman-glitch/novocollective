@@ -169,6 +169,9 @@ figcaption{margin-top:10px}
 .offer h3{font-weight:500;font-size:20px;letter-spacing:-.015em;line-height:1.15;margin:18px 0 8px}
 .offer p{color:#b9babf;font-size:14px;line-height:1.5;max-width:36ch}
 .offer .go{margin-top:18px;align-self:flex-start;color:var(--night-ink)}
+.caps{grid-column:1/-1;display:flex;gap:10px var(--gutter);flex-wrap:wrap;border-top:1px solid var(--night-rule);padding-top:14px;color:#b9babf;line-height:1.7}
+.caps .mute{color:var(--night-mute);flex:none}
+.caps span:last-child{flex:1 1 320px;min-width:0}
 @media (max-width:800px){.w-head .no,.w-head h2,.offer{grid-column:1/-1}.w-head .no{margin-bottom:22px;padding:0}}
 
 .team{grid-column:1/-1;margin-top:clamp(56px,7vw,96px);border-top:1px solid var(--night-rule);border-bottom:1px solid var(--night-rule)}
